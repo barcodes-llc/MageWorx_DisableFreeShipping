@@ -8,9 +8,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- PLUGINS: -->
     <type name="Magento\OfflineShipping\Model\Carrier\Freeshipping">
-        <plugin name="mageworx_disable_free_shipping"
-                type="MageWorx\DisableFreeShipping\Plugin\DisableFreeShippingOnFront"
-                sortOrder="10"/>
         <plugin name="mageworx_disable_free_shipping_by_postcode"
                 type="MageWorx\DisableFreeShipping\Plugin\DisableFreeShippingByPostCode"
                 sortOrder="20"/>

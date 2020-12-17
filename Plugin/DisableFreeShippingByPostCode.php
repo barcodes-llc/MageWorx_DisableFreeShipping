@@ -23,22 +23,9 @@ class DisableFreeShippingByPostCode
         \Magento\Quote\Model\Quote\Address\RateRequest $request
     ) {
         if ($request->getDestPostcode()) { // Check is postcode exists in request
-            if ($this->postCodeContainsNullOnSecondPosition($request->getDestPostcode())) { // Check is second symbol == 0
-                return false; // Disable method
-            }
+            return $proceed($request);
         }
 
-        return $proceed($request);
-    }
-
-    /**
-     * Test postcode
-     *
-     * @param string $postCode
-     * @return bool
-     */
-    private function postCodeContainsNullOnSecondPosition(string $postCode): bool
-    {
-        return stripos($postCode, '0') === 1;
+        return false;
     }
 }
